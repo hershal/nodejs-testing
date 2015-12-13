@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-testing",
+  "version": "0.0.1",
+  "description": "A testing environment for nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo hi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "keywords": [
+    "hershal"
+  ],
+  "author": "Hershal Bhave",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^2.3.4",
+    "should": "^8.0.1"
+  }
+}
