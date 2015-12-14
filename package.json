@@ -4,7 +4,7 @@
   "description": "A testing environment for nodejs",
   "main": "index.js",
   "scripts": {
-    "test": "echo hi"
+      "test": "mocha --compilers coffee:coffee-script/register -R spec -u bdd"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "devDependencies": {
     "mocha": "^2.3.4",
     "should": "^8.0.1"
+  },
+  "dependencies": {
+    "coffee-script": "^1.10.0"
   }
 }
