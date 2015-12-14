@@ -6,7 +6,7 @@
     "scripts": {
         "test": "mocha --compilers coffee:coffee-script/register -R spec -u bdd -w",
         "build": "coffee --compile --output dist .",
-        "start": "(coffee --compile --output dist --watch . &); ./node_modules/nodemon/bin/nodemon.js ./dist/index.js"
+        "start": "nodemon src/index.coffee"
     },
     "repository": {
         "type": "git",
