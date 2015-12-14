@@ -1,25 +1,28 @@
 {
-  "name": "nodejs-testing",
-  "version": "0.0.1",
-  "description": "A testing environment for nodejs",
-  "main": "index.js",
-  "scripts": {
-      "test": "mocha --compilers coffee:coffee-script/register -R spec -u bdd"
-  },
-  "repository": {
-    "type": "git",
-    "url": "."
-  },
-  "keywords": [
-    "hershal"
-  ],
-  "author": "Hershal Bhave",
-  "license": "ISC",
-  "devDependencies": {
-    "mocha": "^2.3.4",
-    "should": "^8.0.1"
-  },
-  "dependencies": {
-    "coffee-script": "^1.10.0"
-  }
+    "name": "nodejs-testing",
+    "version": "0.0.1",
+    "description": "A testing environment for nodejs",
+    "main": "dist/index.js",
+    "scripts": {
+        "test": "mocha --compilers coffee:coffee-script/register -R spec -u bdd -w",
+        "build": "coffee --compile --output dist .",
+        "start": "(coffee --compile --output dist --watch . &); ./node_modules/nodemon/bin/nodemon.js ./dist/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "."
+    },
+    "keywords": [
+        "hershal"
+    ],
+    "author": "Hershal Bhave",
+    "license": "ISC",
+    "devDependencies": {
+        "mocha": "^2.3.4",
+        "nodemon": "^1.8.1",
+        "should": "^8.0.1"
+    },
+    "dependencies": {
+        "coffee-script": "^1.10.0"
+    }
 }
