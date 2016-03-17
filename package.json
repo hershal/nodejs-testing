@@ -18,9 +18,11 @@
   "author": "Hershal Bhave",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "coffee-script": "^1.10.0",
     "express": "^4.13.4",
-    "socket.io": "^1.4.5"
+    "socket.io": "^1.4.5",
+    "uuid": "^2.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.9.1"
