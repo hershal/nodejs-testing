@@ -1,13 +1,14 @@
+User = require "./User"
+
 class UserRegistry
   constructor: () ->
     @users = {}
 
   addUser: (socket) ->
     newUser = new User(socket)
-    users[socket.id] = newUser
-    newUser.socket.on "disconnect", () ->
-      newUser.handleDisconnect()
-      delete users[socket.id]
+    @users[socket.id] = newUser
+    newUser.socket.on "disconnect", () =>
+      delete @users[newUser.handleDisconnect()]
 
   removeUser: (user) ->
     users
