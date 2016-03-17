@@ -21,7 +21,6 @@ http.listen 3000, ->
   console.log "listening on 3000"
 
 io.on "connection", (socket) ->
-  console.log "user connected"
-  users.addUser(socket)
+  users.connect(socket)
 
 users = new UserRegistry()
