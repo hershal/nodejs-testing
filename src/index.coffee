@@ -1,12 +1,14 @@
-module.exports.greeting = greeting = (name) -> "Hello #{name}!"
+app = require("express")()
+http = require("http").Server app
+io = require("socket.io") http
 
-module.exports.par = par = (str) -> "<p>#{str}</p>"
+app.get "/", (req, res) ->
+  res.sendFile __dirname + "/test.html"
 
-console.log greeting "Hershal"
+http.listen 3000, ->
+  console.log "listening on 3000"
 
-http = require("http")
-
-http.createServer (request, response) ->
-  response.writeHead 200, {"Content-Type": "text/html; charset=UTF-8"}
-  response.end par greeting "random person"
-.listen 8080
+io.on "connection", (socket) ->
+  console.log "user connected"
+  socket.on "disconnect", ->
+    console.log "user disconnected"
