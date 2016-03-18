@@ -18,11 +18,15 @@
     <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
     <script>
      var socket = io();
-      /* socket.emit("test-message", "test message") */
+     function emit(id) {
+         console.log("emitting");
+         socket.emit("game-play", {played: id});
+     }
     </script>
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+    <button id="rock-btn" onclick="js:emit(0)">Rock</button>
+    <button id="lizard-btn" onclick="js:emit(1)">Lizard</button>
+    <button id="Spock" onclick="js:emit(2)">Spock
+    <button id="scissor-btn" onclick="js:emit(3)">Scissor</button>
+    <button id="paper-btn" onclick="js:emit(4)">Paper</button>
   </body>
 </html>
