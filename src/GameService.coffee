@@ -37,4 +37,9 @@ class GameService
     if @games[roomId].userCount() <= 0
       @destroyRoom roomId
 
+  userCount: (roomId) ->
+    if not @games[roomId]?
+      return 0
+    @games[roomId].userCount()
+
 module.exports = GameService

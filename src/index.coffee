@@ -14,6 +14,9 @@ app.get "/", (req, res) ->
   res.redirect "/game/" + uuid.v1()
 
 app.get "/game/:id", (req, res) ->
+  roomId = req.params.id
+  if gameService.userCount(roomId) >= 2
+    console.log("IX::TooManyUsers")
   res.sendFile __dirname + "/test.html"
 
 http.listen 3000, ->
