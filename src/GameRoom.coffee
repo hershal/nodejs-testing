@@ -1,3 +1,5 @@
+User = require("./User")
+
 class GameRoom
   constructor: (@roomId) ->
     @users = {}
@@ -9,7 +11,7 @@ class GameRoom
 
   connect: (socket) ->
     console.log "GR::DidConnect: " + socket.id
-    @users[socket.id] = socket
+    @users[socket.id] = new User(socket)
 
   userCount: ->
     Object.keys(@users).length
